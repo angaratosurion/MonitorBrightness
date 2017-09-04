@@ -2,10 +2,12 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MonitorBrightness"
-#define MyAppVersion "1.0.0.0"
+#define MyAppVersion "0.0.5.0"
 #define MyAppPublisher "Paris Koutsioukis"
 #define MyAppURL "http://www.pariskoutsioukis.net/"
 #define MyAppExeName "monitorbrightness.exe" 
+#define MyCodeRepo "https://github.com/angaratosurion/MonitorBrightness"
+#define MyCodeRepoTitle "MonitorBrightness On GitHub"
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
@@ -21,8 +23,8 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=G:\AutoSyncWithParis-Server\My Programs\dotNet\Licences\Attribution-Noncommercial-No Derivative Works 3.txt
-OutputDir=G:\AutoSyncWithParis-Server\My Programs\dotNet\monitorbrightness\Setup\Output
+LicenseFile=..\..\MonitorBrightness\License.txt
+OutputDir=..\..\monitorbrightness\Setup\Output
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 Compression=lzma
 SolidCompression=yes
@@ -62,13 +64,14 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "G:\AutoSyncWithParis-Server\My Programs\dotNet\monitorbrightness\monitorbrightness\bin\Release\monitorbrightness.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\monitorbrightness\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\..\monitorbrightness\monitorbrightness\bin\Release\monitorbrightness.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\monitorbrightness\monitorbrightness\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
+Name: "{group}\{cm:ProgramOnTheWeb,{#MyCodeRepoTitle}}"; Filename: "{#MyCodeRepo}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
