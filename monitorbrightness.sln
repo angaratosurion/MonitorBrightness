@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monitorbrightness", "monitorbrightness\monitorbrightness.csproj", "{B664C00A-E57D-4EA8-B31F-96B6AE9C1925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BucketBox", "BucketBox\BucketBox\BucketBox.csproj", "{06237435-A1C6-4286-82C0-F9584921F59D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BucketBox", "..\BucketBox\BucketBox\BucketBox.csproj", "{06237435-A1C6-4286-82C0-F9584921F59D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
