@@ -123,8 +123,21 @@ namespace monitorbrightness
                     {
                         Console.ReadLine();
                     }
+                    if (args.Contains("-l") == true)
+                    {
+                        int i = -1;
+
+                        brightes = mon.GetBrightness();
+                        contrust = mon.GetContrast();
+                       
+                        Console.Write("Brightness :{0}% \n Contrast:{1}% \n",brightes,contrust);
+                        Console.ReadLine();
+
+
+                    }
 
                 }
+               
                 else
                 {
                     string help;
@@ -132,7 +145,8 @@ namespace monitorbrightness
                         "To Change the birghtness just use -b and an integer from 0 to 100\n"+
                         "To Change the contrust just use -c and an integer from 0 to 100\n"+
                         "-n to close the application after it's done\n"+
-                    "-a to keep  the application runing and  continusly set the arguments every second it is given";
+                    "-a to keep  the application runing and  continusly set the arguments every second it is given\n"+
+                    "-l Show the values for brightness ,contrast and gama ";
                     Console.Write(help);
                     Console.ReadLine();
                 }

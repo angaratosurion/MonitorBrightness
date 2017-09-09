@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MonitorBrightness"
-#define MyAppVersion "0.0.5.5"
+#define MyAppVersion "0.0.6.0"
 #define MyAppPublisher "Paris Koutsioukis"
 #define MyAppURL "http://www.pariskoutsioukis.net/"
 #define MyAppExeName "monitorbrightness.exe" 
