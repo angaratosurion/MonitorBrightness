@@ -146,7 +146,7 @@ namespace monitorbrightness
                         "To Change the contrust just use -c and an integer from 0 to 100\n"+
                         "-n to close the application after it's done\n"+
                     "-a to keep  the application runing and  continusly set the arguments every second it is given\n"+
-                    "-l Show the values for brightness ,contrast and gama ";
+                    "-l Show the values for brightness ,contrast  ";
                     Console.Write(help);
                     Console.ReadLine();
                 }
