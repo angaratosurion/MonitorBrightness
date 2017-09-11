@@ -34,9 +34,9 @@ namespace monitorbrightness
                     if (args.Contains("-g") == true)
                     {
                         int i = -1;
-                        for(i=0;i<args.Length;i++)
+                        for (i = 0; i < args.Length; i++)
                         {
-                            if(args[i]=="-g")
+                            if (args[i] == "-g")
                             {
 
                                 break;
@@ -44,9 +44,11 @@ namespace monitorbrightness
                             }
                         }
                         int j = i + 1;
-                        if ( j<args.Length)
+                        if (j < args.Length)
                         {
                             gama = int.Parse(args[j]);
+                            mon.SetGamma(gama);
+
                         }
 
                     }
@@ -66,6 +68,7 @@ namespace monitorbrightness
                         if (j < args.Length)
                         {
                             brightes = int.Parse(args[j]);
+                            mon.SetBrightness(brightes);
                         }
                     }
                     if (args.Contains("-c") == true)
@@ -84,10 +87,11 @@ namespace monitorbrightness
                         if (j < args.Length)
                         {
                             contrust = int.Parse(args[j]);
+                            mon.SetContrast(contrust);
                         }
                     }
-                    if (args.Contains("-a") == true)
-                        {
+                     if (args.Contains("-a") == true)
+                    {
                         int i = -1;
                         for (i = 0; i < args.Length; i++)
                         {
@@ -101,7 +105,7 @@ namespace monitorbrightness
                         int j = i + 1;
                         if (j < args.Length)
                         {
-                            pausesec = int.Parse(args[j])*1000;
+                            pausesec = int.Parse(args[j]) * 1000;
 
                         }
                         while (true)
@@ -110,18 +114,14 @@ namespace monitorbrightness
                             mon.SetGamma(gama);
                             mon.SetContrast(contrust);
                             System.Threading.Thread.Sleep(pausesec);
-                           
+
                         }
                     }
-                    else
+
+
+                     if (args.Contains("-n") == true)
                     {
-                        mon.SetBrightness(brightes);
-                        mon.SetGamma(gama);
-                        mon.SetContrast(contrust);
-                    }
-                    if (args.Contains("-n") == true)
-                    {
-                        Console.ReadLine();
+                        Application.Exit();
                     }
                     if (args.Contains("-l") == true)
                     {
@@ -129,8 +129,14 @@ namespace monitorbrightness
 
                         brightes = mon.GetBrightness();
                         contrust = mon.GetContrast();
-                       
-                        Console.Write("Brightness :{0}% \n Contrast:{1}% \n",brightes,contrust);
+
+                        Console.Write("Brightness :{0}% \n Contrast:{1}% \n", brightes, contrust);
+                        Console.ReadLine();
+
+
+                    }
+                    else
+                    {
                         Console.ReadLine();
 
 
